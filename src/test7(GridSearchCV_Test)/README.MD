@@ -1,35 +1,24 @@
-# 특성
-PE 헤더 중 가장 기본적인 값만 입력(DOS Header, Optional Header, File Header) 
-FILE Header에서 공식 문서에 언급되지 않은 항목 추가(pestudio에서 사용되는 값) 
-byte-1-gram
-
-
-# 정확도
-
-# Example
-## K-Fold 
-
 ## GridSearch for randomforest, gradientboost
 ```
 ember: we trained a gradientboosed decision tree (GBDT) model using LightGBM with default parameters (100 trees, 31 leaves per tree)
 reference: https://arxiv.org/pdf/1804.04637.pdf
 ```
-
+  
 n_estimators: 트리의 수
 max_depth: 트리의 깊이
-
-# GridSearch randomfroset 실험 결과
+    
+# GridSearch randomforest 실험 결과
 ```
 특성: test6사용
 실험환경 i7-8700, 16GB Ram
 ```
-
+    
 ### default parameter(not used GridSearch)
 ```
 93.746873 %
 ```
-
-### case1
+    
+### case 1
 ```
 params = {
     'n_estimators': [1,2,3,4,5],    
@@ -39,7 +28,7 @@ params = {
 {'max_depth': 200, 'n_estimators': 5}
 0.9250688016012009
 ```
-
+    
 ### case 2
 
 ```
@@ -60,7 +49,7 @@ params = {
    macro avg       0.92      0.94      0.93      1999
 weighted avg       0.95      0.94      0.94      1999
 ```
-
+    
 # 결과
 case1는 i7-8700기준으로 약 2분정도 시간 소요
 case2는 i7-8700기준으로 약 5분정도 시간 소요
@@ -68,10 +57,11 @@ case2는 i7-8700기준으로 약 5분정도 시간 소요
 n_estimators(트리의 수)가 많을 수록 시간이 엄청 오래 걸림
 n_estimators, max_depth와 적절히 섞으면 좋은 효율이 나옴
 ```
-
+    
 # TO do 
-K-fold 교차검증
+K-fold 교차검증    
 
 # reference
-PE Format 공식 문서: https://docs.microsoft.com/en-us/windows/desktop/debug/pe-format#file-headers
-pestudio: https://www.winitor.com/
+PE Format 공식 문서: https://docs.microsoft.com/en-us/windows/desktop/debug/pe-format#file-headers  
+pestudio: https://www.winitor.com/  
+ember논문: reference: https://arxiv.org/pdf/1804.04637.pdf  
