@@ -1,3 +1,8 @@
+# Test7 주제
+PE파일의 기본 특성을 추출한 후 GridSearchCV로 분류기의 최상의 파라미터를 찾는 실험
+(분류기: Randomforest, lightgbm)
+
+
 ## GridSearch for randomforest, gradientboost
 ```
 ember: we trained a gradientboosed decision tree (GBDT) model using LightGBM with default parameters (100 trees, 31 leaves per tree)
@@ -17,7 +22,7 @@ max_depth: 트리의 깊이
 ```
 93.746873 %
 ```
-    
+      
 ### case 1
 ```
 params = {
@@ -28,7 +33,7 @@ params = {
 {'max_depth': 200, 'n_estimators': 5}
 0.9250688016012009
 ```
-    
+      
 ### case 2
 
 ```
@@ -39,7 +44,8 @@ params = {
 
 {'max_depth': 230, 'n_estimators': 1500}
 0.9321991493620215
-94.197099 %
+
+교차 검증(x_test, y_test) :94.197099 %
               precision    recall  f1-score   support
 
            0       0.86      0.94      0.90       540
@@ -49,9 +55,9 @@ params = {
    macro avg       0.92      0.94      0.93      1999
 weighted avg       0.95      0.94      0.94      1999
 ```
-    
+      
 # 결과
-case1는 i7-8700기준으로 약 2분정도 시간 소요
+case1는 i7-8700기준으로 약 2분정도 시간 소요  
 case2는 i7-8700기준으로 약 5분정도 시간 소요
 ```
 n_estimators(트리의 수)가 많을 수록 시간이 엄청 오래 걸림
